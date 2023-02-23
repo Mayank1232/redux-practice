@@ -2,6 +2,8 @@ import {
   FETCH_USER_DATA_REQUEST,
   FETCH_USER_DATA_SUCCESS,
   FETCH_USER_DATA_FAILURE,
+  ADD_FAVORITE,
+  REMOVE_FAVORITE,
 } from "./type";
 
 import { getUsers } from "../../services/UserServices";
@@ -23,6 +25,21 @@ export const fetchUserDataFailure = (error) => {
   return {
     type: FETCH_USER_DATA_FAILURE,
     payload: error,
+  };
+};
+
+export const addFavorite = (user) => {
+  console.log("adding favorite", user);
+  return {
+    type: ADD_FAVORITE,
+    payload: user,
+  };
+};
+
+export const removeFavorite = (user) => {
+  return {
+    type: REMOVE_FAVORITE,
+    payload: user,
   };
 };
 
