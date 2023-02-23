@@ -1,9 +1,11 @@
 import React from "react";
+import BootstrapNavbar from "../components/Navbar/Navbar";
 
-import Table from "./Table";
+import ReactTable from "./Table";
 
 function User() {
   // react table
+
   const data = [
     {
       name: "Alice",
@@ -24,7 +26,7 @@ function User() {
 
   return (
     <div>
-      <Table />
+      <ReactTable />
     </div>
   );
 }

@@ -1,7 +1,13 @@
 import React from "react";
+import BootstrapNavbar from "../components/Navbar/Navbar";
 
 function Favorites() {
-  return <div>Favorites</div>;
+  return (
+    <>
+      <BootstrapNavbar />
+      <h1>Favorites</h1>
+    </>
+  );
 }
 
 export default Favorites;

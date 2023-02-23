@@ -13,7 +13,6 @@ export const fetchUserDataRequest = () => {
 };
 
 export const fetchUserDataSuccess = (users) => {
-  console.log("IN");
   return {
     type: FETCH_USER_DATA_SUCCESS,
     payload: users,
@@ -27,29 +26,11 @@ export const fetchUserDataFailure = (error) => {
   };
 };
 
-// export const fetchUserThunkAction = (params) => {
-//   return async (dispatch) => {
-//     dispatch(fetchUserDataRequest());
-//     await getUsers(params)
-//       .then((response) => {
-//         const users = response?.data;
-//         // console.log(users.results.map((item) => item.email));
-//         console.log(users);
-//         dispatch(fetchUserDataSuccess(users));
-//       })
-//       .catch((error) => {
-//         const errorMsg = error.message;
-//         dispatch(fetchUserDataFailure(errorMsg));
-//       });
-//   };
-// };
-
 export const fetchUserThunkAction = (params, onSuccess, onError) => {
   return async (dispatch) => {
     try {
       dispatch(fetchUserDataRequest());
       const { data } = await getUsers(params);
-      console.log(data);
       // if (data.success !== true) {
       //   throw new Error(data.message);
       // }

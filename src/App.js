@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        <BootstrapNavbar />
+        {/* <BootstrapNavbar />; */}
         <Routes>
           <Route path="/" exact element={<User />} />
           <Route path="/favorites" element={<Favorites />} />

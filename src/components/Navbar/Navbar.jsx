@@ -7,18 +7,13 @@ import Navbar from "react-bootstrap/Navbar";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 
-function BootstrapNavbar() {
+function BootstrapNavbar({
+  handleSearch,
+  searchTerm,
+  handleClick,
+  setSearchTerm,
+}) {
   return (
-    // <nav>
-    //   <ul>
-    //     <li>
-    //       <Link to="/">Home</Link>
-    //     </li>
-    //     <li>
-    //       <Link to="/favorites">favorites</Link>
-    //     </li>
-    //   </ul>
-    // </nav>
     <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">User Listing</Navbar.Brand>
@@ -43,8 +38,9 @@ function BootstrapNavbar() {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
             />
-            <Button variant="outline-success">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
